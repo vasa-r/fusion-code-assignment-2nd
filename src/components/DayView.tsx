@@ -15,7 +15,7 @@ const DayView = () => {
   useEffect(() => console.log(weekDays), [selectedDate]);
 
   return (
-    <div className="w-full -mt-2">
+    <div className="w-full">
       <div className="flex items-center justify-around gap-1.5 md:gap-4 md:px-[5%]">
         {weekDays.map(({ day, date, month, year }) => {
           const isSelected =

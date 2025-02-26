@@ -6,3 +6,7 @@
 
   --color-light-bg: #f5f5f5;
 }
+
+.pink-grad {
+  @apply bg-gradient-to-r from-pink-200 to-orange-200;
+}
