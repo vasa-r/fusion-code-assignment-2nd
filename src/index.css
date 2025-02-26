@@ -10,3 +10,17 @@
 .pink-grad {
   @apply bg-gradient-to-r from-pink-200 to-orange-200;
 }
+
+.pink-grad-month {
+  @apply bg-gradient-to-b from-pink-200 to-orange-200;
+}
+
+.blue-grad-month {
+  @apply bg-gradient-to-r from-blue-200 to-blue-300;
+}
+
+.test {
+  @apply bg-orange-100;
+}
+
+/* #fce7f3  #dbeafe #f7f9f5*/

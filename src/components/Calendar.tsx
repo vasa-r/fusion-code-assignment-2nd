@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DayView from "./DayView";
 import WeekView from "./WeekView";
+import MonthView from "./MonthView";
 
 const Calendar = () => {
   const [view, setView] = useState<"day" | "week" | "month">("week");
@@ -35,10 +36,21 @@ const Calendar = () => {
             ))}
           </div>
         </div>
-        <div className="w-full flex-1">{view === "day" && <DayView />}</div>
-        <div className="w-full h-full overflow-hidden">
-          {view === "week" && <WeekView />}
-        </div>
+        {view === "day" && (
+          <div className="w-full flex-1">
+            <DayView />
+          </div>
+        )}
+        {view === "week" && (
+          <div className="w-full h-full overflow-hidden">
+            <WeekView />
+          </div>
+        )}
+        {view === "month" && (
+          <div className="w-full h-full">
+            <MonthView />
+          </div>
+        )}
       </div>
     </div>
   );
