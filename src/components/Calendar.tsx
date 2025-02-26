@@ -4,7 +4,7 @@ import WeekView from "./WeekView";
 import MonthView from "./MonthView";
 
 const Calendar = () => {
-  const [view, setView] = useState<"day" | "week" | "month">("week");
+  const [view, setView] = useState<"day" | "week" | "month">("day");
 
   return (
     <div className="md:shadow-xl w-full h-full md:p-5">
