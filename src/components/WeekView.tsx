@@ -1,5 +1,6 @@
 import { events } from "../utils/events";
 import { getWeekDates } from "../utils/dates";
+import { Music, Volleyball, WavesLadder } from "lucide-react";
 
 const times = Array.from({ length: 24 }, (_, i) => ({
   label: `${i % 12 || 12}${i < 12 ? "AM" : "PM"}`,
@@ -56,18 +57,22 @@ const WeekView = () => {
                   {matchingEvents.map((event, index) => (
                     <div
                       key={index}
-                      className="absolute w-[90%] left-[5%] rounded-md p-1 text-white text-center text-sm overflow-hidden"
+                      className="absolute w-[90%] left-[5%] rounded-md p-1 text-black text-center text-sm overflow-hidden"
                       style={{
                         background: event.color,
                         height: `${(event.end - event.start) * 60}px`,
                         top: "0px",
                       }}
                     >
-                      {event.title}
-                      <br />
-                      <span className="text-xs">{`${times[event.start].label}-${
-                        times[event.end - 1].label
-                      }`}</span>
+                      {event.icon === "ladder" && <WavesLadder width={20} />}
+                      {event.icon === "ball" && <Volleyball width={20} />}
+                      {event.icon === "music" && <Music width={20} />}
+                      <p className="font-bold text-xs text-left">
+                        {event.title}
+                      </p>
+                      <p className="text-xs font-normal text-neutral-500 text-left">
+                        Brine
+                      </p>
                     </div>
                   ))}
                 </div>
