@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { events } from "../utils/events";
 import { getWeekDates } from "../utils/dates";
 import EventCard from "./EventCard";
@@ -11,8 +11,6 @@ const DayView = () => {
     month: today.getMonth(),
     year: today.getFullYear(),
   });
-
-  useEffect(() => console.log(weekDays), [selectedDate]);
 
   return (
     <div className="w-full">
@@ -64,8 +62,14 @@ const DayView = () => {
               event.month === selectedDate.month &&
               event.year === selectedDate.year
           )
-          .map((event, index) => (
-            <EventCard />
+          .map(({ id, title, icon, start, end }) => (
+            <EventCard
+              key={id}
+              title={title}
+              icon={icon}
+              start={start}
+              end={end}
+            />
           ))}
       </div>
     </div>
